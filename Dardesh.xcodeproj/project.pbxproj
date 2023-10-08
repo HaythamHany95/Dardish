@@ -7,23 +7,41 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5EDB6449EBA575B6558F238E /* Pods_Dardesh.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72DD7A56E1B99CFE9EC9C8F0 /* Pods_Dardesh.framework */; };
 		9DB24ED72ACD597C0046BEE8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB24ED62ACD597C0046BEE8 /* AppDelegate.swift */; };
 		9DB24ED92ACD597C0046BEE8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB24ED82ACD597C0046BEE8 /* SceneDelegate.swift */; };
-		9DB24EDB2ACD597C0046BEE8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB24EDA2ACD597C0046BEE8 /* ViewController.swift */; };
+		9DB24EDB2ACD597C0046BEE8 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB24EDA2ACD597C0046BEE8 /* LoginVC.swift */; };
 		9DB24EDE2ACD597C0046BEE8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DB24EDC2ACD597C0046BEE8 /* Main.storyboard */; };
 		9DB24EE02ACD597F0046BEE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DB24EDF2ACD597F0046BEE8 /* Assets.xcassets */; };
 		9DB24EE32ACD597F0046BEE8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DB24EE12ACD597F0046BEE8 /* LaunchScreen.storyboard */; };
+		9DB24EEB2ACD59F80046BEE8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9DB24EEA2ACD59F80046BEE8 /* GoogleService-Info.plist */; };
+		9DCE120E2AD281050096766F /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCE120D2AD281050096766F /* MainVC.swift */; };
+		9DD0073E2ACEB11100A99B3E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD0073D2ACEB11100A99B3E /* User.swift */; };
+		9DD007402ACEB41500A99B3E /* FirestoreCollectionReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD0073F2ACEB41500A99B3E /* FirestoreCollectionReference.swift */; };
+		9DD007422ACECED600A99B3E /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD007412ACECED600A99B3E /* DatabaseManager.swift */; };
+		9DD007442ACF05DD00A99B3E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD007432ACF05DD00A99B3E /* Constants.swift */; };
+		9DD9C2B92AD2F95600AFBC39 /* SettingsTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD9C2B82AD2F95600AFBC39 /* SettingsTableVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		390EC9BDEDAF02F06A0F258E /* Pods-Dardesh.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dardesh.release.xcconfig"; path = "Target Support Files/Pods-Dardesh/Pods-Dardesh.release.xcconfig"; sourceTree = "<group>"; };
+		6BCB815348CE214703D38809 /* Pods-Dardesh.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dardesh.debug.xcconfig"; path = "Target Support Files/Pods-Dardesh/Pods-Dardesh.debug.xcconfig"; sourceTree = "<group>"; };
+		72DD7A56E1B99CFE9EC9C8F0 /* Pods_Dardesh.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dardesh.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DB24ED32ACD597C0046BEE8 /* Dardesh.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dardesh.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DB24ED62ACD597C0046BEE8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9DB24ED82ACD597C0046BEE8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		9DB24EDA2ACD597C0046BEE8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9DB24EDA2ACD597C0046BEE8 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		9DB24EDD2ACD597C0046BEE8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9DB24EDF2ACD597F0046BEE8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9DB24EE22ACD597F0046BEE8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9DB24EE42ACD597F0046BEE8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9DB24EEA2ACD59F80046BEE8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		9DCE120D2AD281050096766F /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
+		9DD0073D2ACEB11100A99B3E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		9DD0073F2ACEB41500A99B3E /* FirestoreCollectionReference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreCollectionReference.swift; sourceTree = "<group>"; };
+		9DD007412ACECED600A99B3E /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		9DD007432ACF05DD00A99B3E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		9DD9C2B82AD2F95600AFBC39 /* SettingsTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +49,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5EDB6449EBA575B6558F238E /* Pods_Dardesh.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2441B40D754D57B4B202BCA7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				72DD7A56E1B99CFE9EC9C8F0 /* Pods_Dardesh.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		693FA3FABAC08B214CCB72E6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6BCB815348CE214703D38809 /* Pods-Dardesh.debug.xcconfig */,
+				390EC9BDEDAF02F06A0F258E /* Pods-Dardesh.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		9DB24ECA2ACD597C0046BEE8 = {
 			isa = PBXGroup;
 			children = (
 				9DB24ED52ACD597C0046BEE8 /* Dardesh */,
 				9DB24ED42ACD597C0046BEE8 /* Products */,
+				693FA3FABAC08B214CCB72E6 /* Pods */,
+				2441B40D754D57B4B202BCA7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +94,46 @@
 		9DB24ED52ACD597C0046BEE8 /* Dardesh */ = {
 			isa = PBXGroup;
 			children = (
-				9DB24ED62ACD597C0046BEE8 /* AppDelegate.swift */,
-				9DB24ED82ACD597C0046BEE8 /* SceneDelegate.swift */,
-				9DB24EDA2ACD597C0046BEE8 /* ViewController.swift */,
-				9DB24EDC2ACD597C0046BEE8 /* Main.storyboard */,
+				9DD0073C2ACEB06700A99B3E /* Models */,
+				9DD0073B2ACEB05C00A99B3E /* Views */,
+				9DD0073A2ACEB01900A99B3E /* Controllers */,
 				9DB24EDF2ACD597F0046BEE8 /* Assets.xcassets */,
-				9DB24EE12ACD597F0046BEE8 /* LaunchScreen.storyboard */,
 				9DB24EE42ACD597F0046BEE8 /* Info.plist */,
+				9DB24EEA2ACD59F80046BEE8 /* GoogleService-Info.plist */,
 			);
 			path = Dardesh;
+			sourceTree = "<group>";
+		};
+		9DD0073A2ACEB01900A99B3E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				9DB24EDA2ACD597C0046BEE8 /* LoginVC.swift */,
+				9DCE120D2AD281050096766F /* MainVC.swift */,
+				9DD9C2B82AD2F95600AFBC39 /* SettingsTableVC.swift */,
+				9DB24ED82ACD597C0046BEE8 /* SceneDelegate.swift */,
+				9DB24ED62ACD597C0046BEE8 /* AppDelegate.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		9DD0073B2ACEB05C00A99B3E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9DB24EDC2ACD597C0046BEE8 /* Main.storyboard */,
+				9DB24EE12ACD597F0046BEE8 /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9DD0073C2ACEB06700A99B3E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9DD0073D2ACEB11100A99B3E /* User.swift */,
+				9DD007432ACF05DD00A99B3E /* Constants.swift */,
+				9DD0073F2ACEB41500A99B3E /* FirestoreCollectionReference.swift */,
+				9DD007412ACECED600A99B3E /* DatabaseManager.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +143,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9DB24EE72ACD597F0046BEE8 /* Build configuration list for PBXNativeTarget "Dardesh" */;
 			buildPhases = (
+				F5017F4922390570FD2D110B /* [CP] Check Pods Manifest.lock */,
 				9DB24ECF2ACD597C0046BEE8 /* Sources */,
 				9DB24ED02ACD597C0046BEE8 /* Frameworks */,
 				9DB24ED12ACD597C0046BEE8 /* Resources */,
+				D7496F6EDEF7EC29600A6A1F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -126,6 +197,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9DB24EE32ACD597F0046BEE8 /* LaunchScreen.storyboard in Resources */,
+				9DB24EEB2ACD59F80046BEE8 /* GoogleService-Info.plist in Resources */,
 				9DB24EE02ACD597F0046BEE8 /* Assets.xcassets in Resources */,
 				9DB24EDE2ACD597C0046BEE8 /* Main.storyboard in Resources */,
 			);
@@ -133,14 +205,62 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		D7496F6EDEF7EC29600A6A1F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Dardesh/Pods-Dardesh-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Dardesh/Pods-Dardesh-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Dardesh/Pods-Dardesh-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F5017F4922390570FD2D110B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Dardesh-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		9DB24ECF2ACD597C0046BEE8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9DB24EDB2ACD597C0046BEE8 /* ViewController.swift in Sources */,
+				9DD0073E2ACEB11100A99B3E /* User.swift in Sources */,
+				9DB24EDB2ACD597C0046BEE8 /* LoginVC.swift in Sources */,
+				9DD007422ACECED600A99B3E /* DatabaseManager.swift in Sources */,
 				9DB24ED72ACD597C0046BEE8 /* AppDelegate.swift in Sources */,
+				9DD9C2B92AD2F95600AFBC39 /* SettingsTableVC.swift in Sources */,
+				9DD007442ACF05DD00A99B3E /* Constants.swift in Sources */,
+				9DCE120E2AD281050096766F /* MainVC.swift in Sources */,
 				9DB24ED92ACD597C0046BEE8 /* SceneDelegate.swift in Sources */,
+				9DD007402ACEB41500A99B3E /* FirestoreCollectionReference.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +402,7 @@
 		};
 		9DB24EE82ACD597F0046BEE8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6BCB815348CE214703D38809 /* Pods-Dardesh.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -292,8 +413,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -309,6 +430,7 @@
 		};
 		9DB24EE92ACD597F0046BEE8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 390EC9BDEDAF02F06A0F258E /* Pods-Dardesh.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -319,8 +441,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
