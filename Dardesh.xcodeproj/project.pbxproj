@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5EDB6449EBA575B6558F238E /* Pods_Dardesh.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72DD7A56E1B99CFE9EC9C8F0 /* Pods_Dardesh.framework */; };
+		9D0EB4932AD3EC9C007AFB95 /* EditProfileTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0EB4922AD3EC9C007AFB95 /* EditProfileTableVC.swift */; };
 		9DB24ED72ACD597C0046BEE8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB24ED62ACD597C0046BEE8 /* AppDelegate.swift */; };
 		9DB24ED92ACD597C0046BEE8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB24ED82ACD597C0046BEE8 /* SceneDelegate.swift */; };
 		9DB24EDB2ACD597C0046BEE8 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB24EDA2ACD597C0046BEE8 /* LoginVC.swift */; };
@@ -27,6 +28,7 @@
 		390EC9BDEDAF02F06A0F258E /* Pods-Dardesh.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dardesh.release.xcconfig"; path = "Target Support Files/Pods-Dardesh/Pods-Dardesh.release.xcconfig"; sourceTree = "<group>"; };
 		6BCB815348CE214703D38809 /* Pods-Dardesh.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dardesh.debug.xcconfig"; path = "Target Support Files/Pods-Dardesh/Pods-Dardesh.debug.xcconfig"; sourceTree = "<group>"; };
 		72DD7A56E1B99CFE9EC9C8F0 /* Pods_Dardesh.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dardesh.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D0EB4922AD3EC9C007AFB95 /* EditProfileTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileTableVC.swift; sourceTree = "<group>"; };
 		9DB24ED32ACD597C0046BEE8 /* Dardesh.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dardesh.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DB24ED62ACD597C0046BEE8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9DB24ED82ACD597C0046BEE8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -73,6 +75,29 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		9D0EB4942AD3ECCC007AFB95 /* SettingsTab */ = {
+			isa = PBXGroup;
+			children = (
+				9DD9C2B82AD2F95600AFBC39 /* SettingsTableVC.swift */,
+				9D0EB4922AD3EC9C007AFB95 /* EditProfileTableVC.swift */,
+			);
+			path = SettingsTab;
+			sourceTree = "<group>";
+		};
+		9D0EB4952AD3ED01007AFB95 /* ChannelsTab */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ChannelsTab;
+			sourceTree = "<group>";
+		};
+		9D0EB4962AD3ED56007AFB95 /* UsersTab */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UsersTab;
+			sourceTree = "<group>";
+		};
 		9DB24ECA2ACD597C0046BEE8 = {
 			isa = PBXGroup;
 			children = (
@@ -94,6 +119,7 @@
 		9DB24ED52ACD597C0046BEE8 /* Dardesh */ = {
 			isa = PBXGroup;
 			children = (
+				9DD007432ACF05DD00A99B3E /* Constants.swift */,
 				9DD0073C2ACEB06700A99B3E /* Models */,
 				9DD0073B2ACEB05C00A99B3E /* Views */,
 				9DD0073A2ACEB01900A99B3E /* Controllers */,
@@ -109,7 +135,9 @@
 			children = (
 				9DB24EDA2ACD597C0046BEE8 /* LoginVC.swift */,
 				9DCE120D2AD281050096766F /* MainVC.swift */,
-				9DD9C2B82AD2F95600AFBC39 /* SettingsTableVC.swift */,
+				9D0EB4962AD3ED56007AFB95 /* UsersTab */,
+				9D0EB4952AD3ED01007AFB95 /* ChannelsTab */,
+				9D0EB4942AD3ECCC007AFB95 /* SettingsTab */,
 				9DB24ED82ACD597C0046BEE8 /* SceneDelegate.swift */,
 				9DB24ED62ACD597C0046BEE8 /* AppDelegate.swift */,
 			);
@@ -129,7 +157,6 @@
 			isa = PBXGroup;
 			children = (
 				9DD0073D2ACEB11100A99B3E /* User.swift */,
-				9DD007432ACF05DD00A99B3E /* Constants.swift */,
 				9DD0073F2ACEB41500A99B3E /* FirestoreCollectionReference.swift */,
 				9DD007412ACECED600A99B3E /* DatabaseManager.swift */,
 			);
@@ -257,6 +284,7 @@
 				9DD007422ACECED600A99B3E /* DatabaseManager.swift in Sources */,
 				9DB24ED72ACD597C0046BEE8 /* AppDelegate.swift in Sources */,
 				9DD9C2B92AD2F95600AFBC39 /* SettingsTableVC.swift in Sources */,
+				9D0EB4932AD3EC9C007AFB95 /* EditProfileTableVC.swift in Sources */,
 				9DD007442ACF05DD00A99B3E /* Constants.swift in Sources */,
 				9DCE120E2AD281050096766F /* MainVC.swift in Sources */,
 				9DB24ED92ACD597C0046BEE8 /* SceneDelegate.swift in Sources */,

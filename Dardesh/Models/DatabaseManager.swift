@@ -59,7 +59,18 @@ class DatabaseManager {
         }
     }
     
-    private func saveUserInFirestore(_ user: User) {
+    //MARK: - Log Out
+    func logOutCurrentUser(completion: @escaping (_ error: Error?) -> Void) {
+        do {
+            try Auth.auth().signOut()
+            UserDefaults.standard.removeObject(forKey: Constants.currentUser)
+            completion(nil)
+        } catch {
+            completion(error)
+        }
+    }
+    
+    func saveUserInFirestore(_ user: User) {
         do {
             try firestoreReference(.User).document(user.id).setData(from: user)
         } catch {

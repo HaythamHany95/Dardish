@@ -9,4 +9,5 @@ import Foundation
 struct Constants {
     static let currentUser = "Current User"
     static let mainVC = "MainVC"
+    static let appVersion = "App Version \(Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "")"
 }
