@@ -24,7 +24,6 @@ class EditProfileTableVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         usernameTextField.delegate = self
-        gallery?.delegate = self
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(tap)
@@ -45,15 +44,28 @@ class EditProfileTableVC: UITableViewController {
     }
     
     private func showImageGallery() {
-        gallery = GalleryController()
+        self.gallery = GalleryController()
+        self.gallery?.delegate = self
         
         Config.tabsToShow = [.imageTab, .cameraTab]
         Config.initialTab = .imageTab
         Config.Camera.imageLimit = 1
         
-        present(gallery ?? GalleryController(), animated: true)
+        self.present(gallery ?? GalleryController(), animated: true)
     }
     
+    private func uploadAvatarImage(_ image: UIImage) {
+        let fileDirectory = "Avatars/" + "\(User.currentId!)" + ".jpg"
+        
+        FileStorage.uploadImage(image, directory: fileDirectory) { avatarLink in
+            
+            guard var user = User.currentUser else { return }
+            user.avatarLink = avatarLink ?? ""
+            saveUserLocally(user)
+            DatabaseManager.shared.saveUserInFirestore(user)
+        }
+        //LATER:- save image locally
+    }
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return section == 1 ? 0.0 : 0.5
@@ -88,6 +100,8 @@ extension EditProfileTableVC: GalleryControllerDelegate {
                 return
             }
             //LATER:- upload avatarImage
+            self.uploadAvatarImage(avatarImage ?? UIImage())
+            
             self.avatarImageView.image = avatarImage
         }
         
