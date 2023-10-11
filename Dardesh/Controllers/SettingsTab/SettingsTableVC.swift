@@ -16,6 +16,9 @@ class SettingsTableVC: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        avatarImageView.layer.cornerRadius = 30
+        avatarImageView.layer.masksToBounds = true
+        avatarImageView.contentMode = .scaleAspectFill
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
@@ -44,8 +47,11 @@ class SettingsTableVC: UITableViewController {
         usernameLabel.text = user.username
         statusLabel.text = user.status
         appVersionLabel.text = Constants.appVersion
+        
         guard user.avatarLink != "" else { return }
-        // LATER:- download and set avatar image
+        FileStorage.downloadImage(imageUrl: user.avatarLink) { avatarImage in
+            self.avatarImageView.image = avatarImage
+        }
     }
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {

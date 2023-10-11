@@ -23,6 +23,9 @@
 		9DD007442ACF05DD00A99B3E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD007432ACF05DD00A99B3E /* Constants.swift */; };
 		9DD7F9B52AD53EAD00B559DB /* FileStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD7F9B42AD53EAD00B559DB /* FileStorage.swift */; };
 		9DD9C2B92AD2F95600AFBC39 /* SettingsTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD9C2B82AD2F95600AFBC39 /* SettingsTableVC.swift */; };
+		9DEB17F02AD6B66200577037 /* GlobalFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DEB17EF2AD6B66200577037 /* GlobalFunctions.swift */; };
+		9DEB17F22AD6F75000577037 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DEB17F12AD6F75000577037 /* Extensions.swift */; };
+		9DEB17F42AD7038800577037 /* StatusTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DEB17F32AD7038800577037 /* StatusTableVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +49,9 @@
 		9DD007432ACF05DD00A99B3E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		9DD7F9B42AD53EAD00B559DB /* FileStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileStorage.swift; sourceTree = "<group>"; };
 		9DD9C2B82AD2F95600AFBC39 /* SettingsTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableVC.swift; sourceTree = "<group>"; };
+		9DEB17EF2AD6B66200577037 /* GlobalFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalFunctions.swift; sourceTree = "<group>"; };
+		9DEB17F12AD6F75000577037 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		9DEB17F32AD7038800577037 /* StatusTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusTableVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +88,7 @@
 			children = (
 				9DD9C2B82AD2F95600AFBC39 /* SettingsTableVC.swift */,
 				9D0EB4922AD3EC9C007AFB95 /* EditProfileTableVC.swift */,
+				9DEB17F32AD7038800577037 /* StatusTableVC.swift */,
 			);
 			path = SettingsTab;
 			sourceTree = "<group>";
@@ -121,8 +128,8 @@
 		9DB24ED52ACD597C0046BEE8 /* Dardesh */ = {
 			isa = PBXGroup;
 			children = (
+				9DEB17EE2AD6B63600577037 /* Helpers */,
 				9DD7F9B62AD54EB900B559DB /* Firestore */,
-				9DD007432ACF05DD00A99B3E /* Constants.swift */,
 				9DD0073C2ACEB06700A99B3E /* Models */,
 				9DD0073B2ACEB05C00A99B3E /* Views */,
 				9DD0073A2ACEB01900A99B3E /* Controllers */,
@@ -172,6 +179,16 @@
 				9DD7F9B42AD53EAD00B559DB /* FileStorage.swift */,
 			);
 			path = Firestore;
+			sourceTree = "<group>";
+		};
+		9DEB17EE2AD6B63600577037 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				9DD007432ACF05DD00A99B3E /* Constants.swift */,
+				9DEB17EF2AD6B66200577037 /* GlobalFunctions.swift */,
+				9DEB17F12AD6F75000577037 /* Extensions.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -292,11 +309,14 @@
 			files = (
 				9DD0073E2ACEB11100A99B3E /* User.swift in Sources */,
 				9DD7F9B52AD53EAD00B559DB /* FileStorage.swift in Sources */,
+				9DEB17F02AD6B66200577037 /* GlobalFunctions.swift in Sources */,
 				9DB24EDB2ACD597C0046BEE8 /* LoginVC.swift in Sources */,
 				9DD007422ACECED600A99B3E /* DatabaseManager.swift in Sources */,
 				9DB24ED72ACD597C0046BEE8 /* AppDelegate.swift in Sources */,
 				9DD9C2B92AD2F95600AFBC39 /* SettingsTableVC.swift in Sources */,
+				9DEB17F42AD7038800577037 /* StatusTableVC.swift in Sources */,
 				9D0EB4932AD3EC9C007AFB95 /* EditProfileTableVC.swift in Sources */,
+				9DEB17F22AD6F75000577037 /* Extensions.swift in Sources */,
 				9DD007442ACF05DD00A99B3E /* Constants.swift in Sources */,
 				9DCE120E2AD281050096766F /* MainVC.swift in Sources */,
 				9DB24ED92ACD597C0046BEE8 /* SceneDelegate.swift in Sources */,

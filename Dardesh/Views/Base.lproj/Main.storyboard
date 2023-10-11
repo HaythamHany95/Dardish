@@ -555,7 +555,7 @@
                             </tableViewSection>
                             <tableViewSection id="h6t-aT-teV">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="TZS-5N-ltt">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" id="TZS-5N-ltt">
                                         <rect key="frame" x="0.0" y="225.33333206176758" width="393" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TZS-5N-ltt" id="udS-BP-vMb">
@@ -589,11 +589,41 @@
                         <outlet property="avatarImageView" destination="RrT-Sf-6so" id="CRo-9q-PYy"/>
                         <outlet property="statusLabel" destination="htk-WB-bYS" id="aAr-SS-LQN"/>
                         <outlet property="usernameTextField" destination="NRo-y1-9D9" id="PT9-XA-r9w"/>
+                        <segue destination="WzX-gb-QkC" kind="show" identifier="goToStatus" id="xvo-Mz-u9v"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QKX-B8-EFq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2700" y="1394"/>
+        </scene>
+        <!--Status TableVC-->
+        <scene sceneID="ydk-6W-ETd">
+            <objects>
+                <tableViewController id="WzX-gb-QkC" customClass="StatusTableVC" customModule="Dardesh" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="xnl-hc-pKj">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="statusCell" id="W9v-3q-i7s">
+                                <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="W9v-3q-i7s" id="Rhv-lj-rtm">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="WzX-gb-QkC" id="wcO-Ea-cbg"/>
+                            <outlet property="delegate" destination="WzX-gb-QkC" id="fSG-QR-D0a"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="HQc-T5-8qR"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1ge-Pi-dUU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3378" y="1394"/>
         </scene>
     </scenes>
     <resources>

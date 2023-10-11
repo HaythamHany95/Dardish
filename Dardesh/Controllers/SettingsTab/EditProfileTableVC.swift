@@ -23,11 +23,19 @@ class EditProfileTableVC: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        avatarImageView.layer.cornerRadius = 30
+        avatarImageView.layer.masksToBounds = true
+        avatarImageView.contentMode = .scaleAspectFill
+        
         usernameTextField.delegate = self
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(tap)
         
+        showUserInfo()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         showUserInfo()
     }
     
@@ -41,6 +49,9 @@ class EditProfileTableVC: UITableViewController {
         statusLabel.text = user.status
         guard user.avatarLink != "" else { return }
         //LATER:- Set avatar image
+        FileStorage.downloadImage(imageUrl: user.avatarLink) { avatarImage in
+            self.avatarImageView.image = avatarImage
+        }
     }
     
     private func showImageGallery() {
@@ -55,7 +66,7 @@ class EditProfileTableVC: UITableViewController {
     }
     
     private func uploadAvatarImage(_ image: UIImage) {
-        let fileDirectory = "Avatars/" + "\(User.currentId!)" + ".jpg"
+        let fileDirectory = "Avatars/" + "_\(User.currentId!)" + ".jpg"
         
         FileStorage.uploadImage(image, directory: fileDirectory) { avatarLink in
             
@@ -64,11 +75,19 @@ class EditProfileTableVC: UITableViewController {
             saveUserLocally(user)
             DatabaseManager.shared.saveUserInFirestore(user)
         }
-        //LATER:- save image locally
+        
+        //Save image locally
+        FileStorage.saveFileLocally(fileData: image.jpegData(compressionQuality: 0.5)! as NSData, fileName: User.currentId!)
     }
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return section == 1 ? 0.0 : 0.5
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == 2 && indexPath.row == 0 {
+            performSegue(withIdentifier: "goToStatus", sender: self)
+        }
     }
     
 }
