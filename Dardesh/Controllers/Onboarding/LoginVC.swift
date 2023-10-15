@@ -119,7 +119,7 @@ class LoginVC: UIViewController {
     private func registerUser() {
         guard passwordTextField.text == confirmPasswordTextField.text else { return }
         
-        DatabaseManager.shared.registerUserWith(email: emailTextField.text ?? "", username: emailTextField.text ?? "", password: passwordTextField.text ?? "") { error in
+        UserFirestoreListener.shared.registerUserWith(email: emailTextField.text ?? "", username: emailTextField.text ?? "", password: passwordTextField.text ?? "") { error in
             
             guard error == nil else {
                 ProgressHUD.showError(error?.localizedDescription)
@@ -130,7 +130,7 @@ class LoginVC: UIViewController {
     }
     
     private func loginUser() {
-        DatabaseManager.shared.loginUserWith(email: emailTextField.text ?? "", password: passwordTextField.text ?? "")
+        UserFirestoreListener.shared.loginUserWith(email: emailTextField.text ?? "", password: passwordTextField.text ?? "")
         { error, isEmailVerifieed in
             if error == nil {
                 
@@ -150,13 +150,13 @@ class LoginVC: UIViewController {
     }
     
     private func goToApp() {
-        let vc = storyboard?.instantiateViewController(withIdentifier: Constants.mainVC) as? MainVC
-        vc?.modalPresentationStyle = .fullScreen
-        present(vc ?? UITabBarController(), animated: false)
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: Constants.mainVC) as? MainVC
+        vc!.modalPresentationStyle = .fullScreen
+        present(vc!, animated: false)
     }
     
     private func resendVerificationEmail() {
-        DatabaseManager.shared.resendVerificationEmailWith(email: emailTextField.text ?? "") { error in
+        UserFirestoreListener.shared.resendVerificationEmailWith(email: emailTextField.text ?? "") { error in
             if error == nil {
                 ProgressHUD.showSucceed("Verification email sent successfully")
             } else {
@@ -166,7 +166,7 @@ class LoginVC: UIViewController {
     }
     
     private func resetPassword() {
-        DatabaseManager.shared.resetPasswordFor(email: emailTextField.text ?? "") { error in
+        UserFirestoreListener.shared.resetPasswordFor(email: emailTextField.text ?? "") { error in
             if error == nil {
                 ProgressHUD.showSucceed("Reset email has been sent successfully")
             } else {

@@ -10,6 +10,7 @@ import Firebase
 
 enum FirestoreCollection: String {
     case User
+    case Chat
 }
 
 func firestoreReference(_ collectionReference: FirestoreCollection) -> CollectionReference {

@@ -23,7 +23,7 @@ class StatusTableVC: UITableViewController {
         guard var user = User.currentUser else { return }
         user.status = userStatus ?? "Hey I'm using Dardish"
         saveUserLocally(user)
-        DatabaseManager.shared.saveUserInFirestore(user)
+        UserFirestoreListener.shared.saveUserInFirestore(user)
         
     }
 

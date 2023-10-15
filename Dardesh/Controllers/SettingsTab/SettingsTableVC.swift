@@ -17,7 +17,6 @@ class SettingsTableVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         avatarImageView.layer.cornerRadius = 30
-        avatarImageView.layer.masksToBounds = true
         avatarImageView.contentMode = .scaleAspectFill
     }
     override func viewDidAppear(_ animated: Bool) {
@@ -34,7 +33,7 @@ class SettingsTableVC: UITableViewController {
     
     @IBAction func logOutButton(_ sender: UIButton) {
         //LATER:- Alert Controller before sign out
-        DatabaseManager.shared.logOutCurrentUser { error in
+        UserFirestoreListener.shared.logOutCurrentUser { error in
             guard error == nil else { return }
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "onboarding") as? LoginVC
             vc?.modalPresentationStyle = .fullScreen

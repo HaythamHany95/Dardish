@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		5EDB6449EBA575B6558F238E /* Pods_Dardesh.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72DD7A56E1B99CFE9EC9C8F0 /* Pods_Dardesh.framework */; };
 		9D0EB4932AD3EC9C007AFB95 /* EditProfileTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0EB4922AD3EC9C007AFB95 /* EditProfileTableVC.swift */; };
+		9D92F5A82ADC2C5600BE53F7 /* MessagesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D92F5A72ADC2C5500BE53F7 /* MessagesVC.swift */; };
+		9D990CCA2AD9920500161C38 /* ChatsTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D990CC92AD9920500161C38 /* ChatsTableVC.swift */; };
+		9D990CCC2AD9924D00161C38 /* ChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D990CCB2AD9924D00161C38 /* ChatTableViewCell.swift */; };
+		9D990CCE2AD9957C00161C38 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D990CCD2AD9957C00161C38 /* MainVC.swift */; };
+		9D9EFC022AD9BE2B008743D2 /* ChatRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9EFC012AD9BE2B008743D2 /* ChatRoom.swift */; };
+		9DAED43F2ADBA7750002CBD1 /* ChatRoomFirestoreListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DAED43E2ADBA7750002CBD1 /* ChatRoomFirestoreListener.swift */; };
 		9DB24ED72ACD597C0046BEE8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB24ED62ACD597C0046BEE8 /* AppDelegate.swift */; };
 		9DB24ED92ACD597C0046BEE8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB24ED82ACD597C0046BEE8 /* SceneDelegate.swift */; };
 		9DB24EDB2ACD597C0046BEE8 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB24EDA2ACD597C0046BEE8 /* LoginVC.swift */; };
@@ -16,16 +22,19 @@
 		9DB24EE02ACD597F0046BEE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DB24EDF2ACD597F0046BEE8 /* Assets.xcassets */; };
 		9DB24EE32ACD597F0046BEE8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DB24EE12ACD597F0046BEE8 /* LaunchScreen.storyboard */; };
 		9DB24EEB2ACD59F80046BEE8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9DB24EEA2ACD59F80046BEE8 /* GoogleService-Info.plist */; };
-		9DCE120E2AD281050096766F /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCE120D2AD281050096766F /* MainVC.swift */; };
+		9DC3ED3C2AD83C1400C027E4 /* UserProfileTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC3ED3B2AD83C1400C027E4 /* UserProfileTableVC.swift */; };
+		9DCEAF042AD7C418000CE9DE /* UsersTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCEAF032AD7C418000CE9DE /* UsersTableVC.swift */; };
+		9DCEAF062AD7C446000CE9DE /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCEAF052AD7C446000CE9DE /* UserTableViewCell.swift */; };
 		9DD0073E2ACEB11100A99B3E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD0073D2ACEB11100A99B3E /* User.swift */; };
 		9DD007402ACEB41500A99B3E /* FirestoreCollectionReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD0073F2ACEB41500A99B3E /* FirestoreCollectionReference.swift */; };
-		9DD007422ACECED600A99B3E /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD007412ACECED600A99B3E /* DatabaseManager.swift */; };
+		9DD007422ACECED600A99B3E /* UserFirestoreListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD007412ACECED600A99B3E /* UserFirestoreListener.swift */; };
 		9DD007442ACF05DD00A99B3E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD007432ACF05DD00A99B3E /* Constants.swift */; };
 		9DD7F9B52AD53EAD00B559DB /* FileStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD7F9B42AD53EAD00B559DB /* FileStorage.swift */; };
 		9DD9C2B92AD2F95600AFBC39 /* SettingsTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD9C2B82AD2F95600AFBC39 /* SettingsTableVC.swift */; };
 		9DEB17F02AD6B66200577037 /* GlobalFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DEB17EF2AD6B66200577037 /* GlobalFunctions.swift */; };
 		9DEB17F22AD6F75000577037 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DEB17F12AD6F75000577037 /* Extensions.swift */; };
 		9DEB17F42AD7038800577037 /* StatusTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DEB17F32AD7038800577037 /* StatusTableVC.swift */; };
+		9DFB6CC02ADAA47700E51E3C /* StartChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFB6CBF2ADAA47700E51E3C /* StartChat.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +42,12 @@
 		6BCB815348CE214703D38809 /* Pods-Dardesh.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dardesh.debug.xcconfig"; path = "Target Support Files/Pods-Dardesh/Pods-Dardesh.debug.xcconfig"; sourceTree = "<group>"; };
 		72DD7A56E1B99CFE9EC9C8F0 /* Pods_Dardesh.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dardesh.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D0EB4922AD3EC9C007AFB95 /* EditProfileTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileTableVC.swift; sourceTree = "<group>"; };
+		9D92F5A72ADC2C5500BE53F7 /* MessagesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesVC.swift; sourceTree = "<group>"; };
+		9D990CC92AD9920500161C38 /* ChatsTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsTableVC.swift; sourceTree = "<group>"; };
+		9D990CCB2AD9924D00161C38 /* ChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableViewCell.swift; sourceTree = "<group>"; };
+		9D990CCD2AD9957C00161C38 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
+		9D9EFC012AD9BE2B008743D2 /* ChatRoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoom.swift; sourceTree = "<group>"; };
+		9DAED43E2ADBA7750002CBD1 /* ChatRoomFirestoreListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomFirestoreListener.swift; sourceTree = "<group>"; };
 		9DB24ED32ACD597C0046BEE8 /* Dardesh.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dardesh.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DB24ED62ACD597C0046BEE8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9DB24ED82ACD597C0046BEE8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -42,16 +57,19 @@
 		9DB24EE22ACD597F0046BEE8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9DB24EE42ACD597F0046BEE8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9DB24EEA2ACD59F80046BEE8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		9DCE120D2AD281050096766F /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
+		9DC3ED3B2AD83C1400C027E4 /* UserProfileTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileTableVC.swift; sourceTree = "<group>"; };
+		9DCEAF032AD7C418000CE9DE /* UsersTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersTableVC.swift; sourceTree = "<group>"; };
+		9DCEAF052AD7C446000CE9DE /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 		9DD0073D2ACEB11100A99B3E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		9DD0073F2ACEB41500A99B3E /* FirestoreCollectionReference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreCollectionReference.swift; sourceTree = "<group>"; };
-		9DD007412ACECED600A99B3E /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		9DD007412ACECED600A99B3E /* UserFirestoreListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFirestoreListener.swift; sourceTree = "<group>"; };
 		9DD007432ACF05DD00A99B3E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		9DD7F9B42AD53EAD00B559DB /* FileStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileStorage.swift; sourceTree = "<group>"; };
 		9DD9C2B82AD2F95600AFBC39 /* SettingsTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableVC.swift; sourceTree = "<group>"; };
 		9DEB17EF2AD6B66200577037 /* GlobalFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalFunctions.swift; sourceTree = "<group>"; };
 		9DEB17F12AD6F75000577037 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		9DEB17F32AD7038800577037 /* StatusTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusTableVC.swift; sourceTree = "<group>"; };
+		9DFB6CBF2ADAA47700E51E3C /* StartChat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartChat.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,8 +121,20 @@
 		9D0EB4962AD3ED56007AFB95 /* UsersTab */ = {
 			isa = PBXGroup;
 			children = (
+				9DCEAF032AD7C418000CE9DE /* UsersTableVC.swift */,
+				9DCEAF052AD7C446000CE9DE /* UserTableViewCell.swift */,
+				9DC3ED3B2AD83C1400C027E4 /* UserProfileTableVC.swift */,
 			);
 			path = UsersTab;
+			sourceTree = "<group>";
+		};
+		9D990CC82AD98D6200161C38 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				9DB24EDA2ACD597C0046BEE8 /* LoginVC.swift */,
+				9D990CCD2AD9957C00161C38 /* MainVC.swift */,
+			);
+			path = Onboarding;
 			sourceTree = "<group>";
 		};
 		9DB24ECA2ACD597C0046BEE8 = {
@@ -140,13 +170,23 @@
 			path = Dardesh;
 			sourceTree = "<group>";
 		};
+		9DCE96422AD98AE40022AB49 /* ChatTab */ = {
+			isa = PBXGroup;
+			children = (
+				9D990CC92AD9920500161C38 /* ChatsTableVC.swift */,
+				9D990CCB2AD9924D00161C38 /* ChatTableViewCell.swift */,
+				9D92F5A72ADC2C5500BE53F7 /* MessagesVC.swift */,
+			);
+			path = ChatTab;
+			sourceTree = "<group>";
+		};
 		9DD0073A2ACEB01900A99B3E /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				9DB24EDA2ACD597C0046BEE8 /* LoginVC.swift */,
-				9DCE120D2AD281050096766F /* MainVC.swift */,
-				9D0EB4962AD3ED56007AFB95 /* UsersTab */,
+				9D990CC82AD98D6200161C38 /* Onboarding */,
+				9DCE96422AD98AE40022AB49 /* ChatTab */,
 				9D0EB4952AD3ED01007AFB95 /* ChannelsTab */,
+				9D0EB4962AD3ED56007AFB95 /* UsersTab */,
 				9D0EB4942AD3ECCC007AFB95 /* SettingsTab */,
 				9DB24ED82ACD597C0046BEE8 /* SceneDelegate.swift */,
 				9DB24ED62ACD597C0046BEE8 /* AppDelegate.swift */,
@@ -167,7 +207,7 @@
 			isa = PBXGroup;
 			children = (
 				9DD0073D2ACEB11100A99B3E /* User.swift */,
-				9DD007412ACECED600A99B3E /* DatabaseManager.swift */,
+				9D9EFC012AD9BE2B008743D2 /* ChatRoom.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -177,6 +217,8 @@
 			children = (
 				9DD0073F2ACEB41500A99B3E /* FirestoreCollectionReference.swift */,
 				9DD7F9B42AD53EAD00B559DB /* FileStorage.swift */,
+				9DD007412ACECED600A99B3E /* UserFirestoreListener.swift */,
+				9DAED43E2ADBA7750002CBD1 /* ChatRoomFirestoreListener.swift */,
 			);
 			path = Firestore;
 			sourceTree = "<group>";
@@ -184,8 +226,9 @@
 		9DEB17EE2AD6B63600577037 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				9DD007432ACF05DD00A99B3E /* Constants.swift */,
 				9DEB17EF2AD6B66200577037 /* GlobalFunctions.swift */,
+				9DFB6CBF2ADAA47700E51E3C /* StartChat.swift */,
+				9DD007432ACF05DD00A99B3E /* Constants.swift */,
 				9DEB17F12AD6F75000577037 /* Extensions.swift */,
 			);
 			path = Helpers;
@@ -310,16 +353,25 @@
 				9DD0073E2ACEB11100A99B3E /* User.swift in Sources */,
 				9DD7F9B52AD53EAD00B559DB /* FileStorage.swift in Sources */,
 				9DEB17F02AD6B66200577037 /* GlobalFunctions.swift in Sources */,
+				9D990CCC2AD9924D00161C38 /* ChatTableViewCell.swift in Sources */,
 				9DB24EDB2ACD597C0046BEE8 /* LoginVC.swift in Sources */,
-				9DD007422ACECED600A99B3E /* DatabaseManager.swift in Sources */,
+				9DCEAF062AD7C446000CE9DE /* UserTableViewCell.swift in Sources */,
+				9D990CCA2AD9920500161C38 /* ChatsTableVC.swift in Sources */,
+				9DFB6CC02ADAA47700E51E3C /* StartChat.swift in Sources */,
+				9DD007422ACECED600A99B3E /* UserFirestoreListener.swift in Sources */,
 				9DB24ED72ACD597C0046BEE8 /* AppDelegate.swift in Sources */,
+				9DCEAF042AD7C418000CE9DE /* UsersTableVC.swift in Sources */,
 				9DD9C2B92AD2F95600AFBC39 /* SettingsTableVC.swift in Sources */,
 				9DEB17F42AD7038800577037 /* StatusTableVC.swift in Sources */,
+				9D990CCE2AD9957C00161C38 /* MainVC.swift in Sources */,
 				9D0EB4932AD3EC9C007AFB95 /* EditProfileTableVC.swift in Sources */,
+				9DAED43F2ADBA7750002CBD1 /* ChatRoomFirestoreListener.swift in Sources */,
 				9DEB17F22AD6F75000577037 /* Extensions.swift in Sources */,
 				9DD007442ACF05DD00A99B3E /* Constants.swift in Sources */,
-				9DCE120E2AD281050096766F /* MainVC.swift in Sources */,
+				9DC3ED3C2AD83C1400C027E4 /* UserProfileTableVC.swift in Sources */,
 				9DB24ED92ACD597C0046BEE8 /* SceneDelegate.swift in Sources */,
+				9D9EFC022AD9BE2B008743D2 /* ChatRoom.swift in Sources */,
+				9D92F5A82ADC2C5600BE53F7 /* MessagesVC.swift in Sources */,
 				9DD007402ACEB41500A99B3E /* FirestoreCollectionReference.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

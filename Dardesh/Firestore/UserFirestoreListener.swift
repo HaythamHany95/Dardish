@@ -9,8 +9,8 @@ import Foundation
 import Firebase
 
 
-class DatabaseManager {
-    static let shared = DatabaseManager()
+class UserFirestoreListener {
+    static let shared = UserFirestoreListener()
     
     //MARK: - Login
     func loginUserWith(email: String, password: String, completion: @escaping (_ error: Error?, _ isEmailVerifieed: Bool) -> Void) {
@@ -99,9 +99,29 @@ class DatabaseManager {
             case .failure(let error):
                 print("error docoding user \(error.localizedDescription)")
             }
-            
         }
-        
     }
     
+    func downloadAllUsersfromFirestore(completion: @escaping (_ users: [User]?) -> Void) {
+        
+        var appUsers: [User] = []
+
+        firestoreReference(.User).getDocuments { snapshot, error in
+            guard let documents = snapshot?.documents else {
+                print("no documents found")
+                return
+            }
+            let allUsers = documents.compactMap { snapshot -> User? in
+                return try? snapshot.data(as: User.self)
+            }
+
+//for exepting the current user "Haytham" of being in the all users, and the array above for appending others only.
+            for user in allUsers {
+                if User.currentId != user.id {
+                    appUsers.append(user)
+                }
+            }
+            completion(appUsers)
+        }
+    }
 }

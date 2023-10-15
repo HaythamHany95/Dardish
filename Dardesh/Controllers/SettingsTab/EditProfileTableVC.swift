@@ -24,7 +24,6 @@ class EditProfileTableVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         avatarImageView.layer.cornerRadius = 30
-        avatarImageView.layer.masksToBounds = true
         avatarImageView.contentMode = .scaleAspectFill
         
         usernameTextField.delegate = self
@@ -73,7 +72,7 @@ class EditProfileTableVC: UITableViewController {
             guard var user = User.currentUser else { return }
             user.avatarLink = avatarLink ?? ""
             saveUserLocally(user)
-            DatabaseManager.shared.saveUserInFirestore(user)
+            UserFirestoreListener.shared.saveUserInFirestore(user)
         }
         
         //Save image locally
@@ -100,7 +99,7 @@ extension EditProfileTableVC: UITextFieldDelegate {
             guard var user = User.currentUser else { return false }
             user.username = textField.text ?? ""
             saveUserLocally(user)
-            DatabaseManager.shared.saveUserInFirestore(user)
+            UserFirestoreListener.shared.saveUserInFirestore(user)
         }
         usernameTextField.resignFirstResponder()
         return true
