@@ -29,6 +29,11 @@
 		9DCB27162ADD375100F1A8FA /* MessagesDisplayDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCB27152ADD375100F1A8FA /* MessagesDisplayDelegate.swift */; };
 		9DCB27182ADD377400F1A8FA /* MessagesLayoutDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCB27172ADD377400F1A8FA /* MessagesLayoutDelegate.swift */; };
 		9DCB271A2ADD37A200F1A8FA /* InputBarAccessoryViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCB27192ADD37A200F1A8FA /* InputBarAccessoryViewDelegate.swift */; };
+		9DCB271C2ADD755500F1A8FA /* MKSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCB271B2ADD755500F1A8FA /* MKSender.swift */; };
+		9DCB271E2ADD7C3800F1A8FA /* MKMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCB271D2ADD7C3800F1A8FA /* MKMessage.swift */; };
+		9DCB27202ADD92E700F1A8FA /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCB271F2ADD92E700F1A8FA /* RealmManager.swift */; };
+		9DCB27222ADD96D400F1A8FA /* MessageFirestoreListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCB27212ADD96D400F1A8FA /* MessageFirestoreListener.swift */; };
+		9DCB27242ADD9CC600F1A8FA /* OutgoingMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCB27232ADD9CC600F1A8FA /* OutgoingMessage.swift */; };
 		9DCEAF042AD7C418000CE9DE /* UsersTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCEAF032AD7C418000CE9DE /* UsersTableVC.swift */; };
 		9DCEAF062AD7C446000CE9DE /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCEAF052AD7C446000CE9DE /* UserTableViewCell.swift */; };
 		9DD0073E2ACEB11100A99B3E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD0073D2ACEB11100A99B3E /* User.swift */; };
@@ -70,6 +75,11 @@
 		9DCB27152ADD375100F1A8FA /* MessagesDisplayDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesDisplayDelegate.swift; sourceTree = "<group>"; };
 		9DCB27172ADD377400F1A8FA /* MessagesLayoutDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesLayoutDelegate.swift; sourceTree = "<group>"; };
 		9DCB27192ADD37A200F1A8FA /* InputBarAccessoryViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputBarAccessoryViewDelegate.swift; sourceTree = "<group>"; };
+		9DCB271B2ADD755500F1A8FA /* MKSender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MKSender.swift; sourceTree = "<group>"; };
+		9DCB271D2ADD7C3800F1A8FA /* MKMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MKMessage.swift; sourceTree = "<group>"; };
+		9DCB271F2ADD92E700F1A8FA /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
+		9DCB27212ADD96D400F1A8FA /* MessageFirestoreListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageFirestoreListener.swift; sourceTree = "<group>"; };
+		9DCB27232ADD9CC600F1A8FA /* OutgoingMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutgoingMessage.swift; sourceTree = "<group>"; };
 		9DCEAF032AD7C418000CE9DE /* UsersTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersTableVC.swift; sourceTree = "<group>"; };
 		9DCEAF052AD7C446000CE9DE /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 		9DD0073D2ACEB11100A99B3E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -234,6 +244,10 @@
 				9DD0073D2ACEB11100A99B3E /* User.swift */,
 				9D9EFC012AD9BE2B008743D2 /* ChatRoom.swift */,
 				9DCB270E2ADD09FF00F1A8FA /* LocalMessage.swift */,
+				9DCB271B2ADD755500F1A8FA /* MKSender.swift */,
+				9DCB271D2ADD7C3800F1A8FA /* MKMessage.swift */,
+				9DCB271F2ADD92E700F1A8FA /* RealmManager.swift */,
+				9DCB27232ADD9CC600F1A8FA /* OutgoingMessage.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -245,6 +259,7 @@
 				9DD7F9B42AD53EAD00B559DB /* FileStorage.swift */,
 				9DD007412ACECED600A99B3E /* UserFirestoreListener.swift */,
 				9DAED43E2ADBA7750002CBD1 /* ChatRoomFirestoreListener.swift */,
+				9DCB27212ADD96D400F1A8FA /* MessageFirestoreListener.swift */,
 			);
 			path = Firestore;
 			sourceTree = "<group>";
@@ -377,6 +392,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9DCB27182ADD377400F1A8FA /* MessagesLayoutDelegate.swift in Sources */,
+				9DCB27222ADD96D400F1A8FA /* MessageFirestoreListener.swift in Sources */,
 				9DD0073E2ACEB11100A99B3E /* User.swift in Sources */,
 				9DD7F9B52AD53EAD00B559DB /* FileStorage.swift in Sources */,
 				9DEB17F02AD6B66200577037 /* GlobalFunctions.swift in Sources */,
@@ -389,22 +405,26 @@
 				9DD007422ACECED600A99B3E /* UserFirestoreListener.swift in Sources */,
 				9DCB27122ADD370D00F1A8FA /* MessagesDataSource.swift in Sources */,
 				9DB24ED72ACD597C0046BEE8 /* AppDelegate.swift in Sources */,
+				9DCB271C2ADD755500F1A8FA /* MKSender.swift in Sources */,
 				9DCEAF042AD7C418000CE9DE /* UsersTableVC.swift in Sources */,
 				9DD9C2B92AD2F95600AFBC39 /* SettingsTableVC.swift in Sources */,
 				9DEB17F42AD7038800577037 /* StatusTableVC.swift in Sources */,
 				9DCB270F2ADD09FF00F1A8FA /* LocalMessage.swift in Sources */,
 				9D990CCE2AD9957C00161C38 /* MainVC.swift in Sources */,
 				9D0EB4932AD3EC9C007AFB95 /* EditProfileTableVC.swift in Sources */,
+				9DCB27242ADD9CC600F1A8FA /* OutgoingMessage.swift in Sources */,
 				9DAED43F2ADBA7750002CBD1 /* ChatRoomFirestoreListener.swift in Sources */,
 				9DEB17F22AD6F75000577037 /* Extensions.swift in Sources */,
 				9DD007442ACF05DD00A99B3E /* Constants.swift in Sources */,
 				9DC3ED3C2AD83C1400C027E4 /* UserProfileTableVC.swift in Sources */,
 				9DB24ED92ACD597C0046BEE8 /* SceneDelegate.swift in Sources */,
+				9DCB27202ADD92E700F1A8FA /* RealmManager.swift in Sources */,
 				9DCB27142ADD373A00F1A8FA /* MessageCellDelegate.swift in Sources */,
 				9DCB27162ADD375100F1A8FA /* MessagesDisplayDelegate.swift in Sources */,
 				9D9EFC022AD9BE2B008743D2 /* ChatRoom.swift in Sources */,
 				9D92F5A82ADC2C5600BE53F7 /* MessagesVC.swift in Sources */,
 				9DD007402ACEB41500A99B3E /* FirestoreCollectionReference.swift in Sources */,
+				9DCB271E2ADD7C3800F1A8FA /* MKMessage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

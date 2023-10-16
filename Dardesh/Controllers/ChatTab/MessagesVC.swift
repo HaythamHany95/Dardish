@@ -3,7 +3,7 @@
 //  Dardesh
 //
 //  Created by Haytham on 15/10/2023.
-//
+//  MK = MessageKit
 
 import UIKit
 import MessageKit
@@ -18,7 +18,9 @@ class MessagesVC: MessagesViewController {
     private var recipientName = ""
     let refreshControl = UIRefreshControl()
     let micButton = InputBarButtonItem()
-
+    
+    let currentUser = MKSender(senderId: User.currentId!, displayName: User.currentUser!.username)
+    let mkMessages: [MKMessage] = []
     
     init(chatId: String, recipientId: String, recipientName: String) {
         super.init(nibName: nil, bundle: nil)
@@ -62,7 +64,7 @@ class MessagesVC: MessagesViewController {
         messageInputBar.setStackViewItems([attachButton], forStack: .left, animated: false)
         messageInputBar.setLeftStackViewWidthConstant(to: 36, animated: false)
         //TODO: update micButton status
-        updateMicButtonStatus(show: true)
+        updateMicButtonStatus(show: false)
         
         messageInputBar.inputTextView.isImagePasteEnabled = false
         messageInputBar.inputTextView.backgroundColor = .systemBackground
@@ -81,6 +83,11 @@ class MessagesVC: MessagesViewController {
         }
     }
     
+
+    //ACTIONS
+    func send(text: String?, image: UIImage?, video: Video?,location: String?, audio: String?, audioDuration: Float = 0.0) {
+        OutgoingMessage.sendMessage(chatId: chatId, memberIds: [User.currentId!, recipientsId], text: text, video: video, audio: audio, image: image, location: location)
+    }
     
     
     
