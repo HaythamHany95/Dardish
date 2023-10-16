@@ -13,6 +13,7 @@ class UserFirestoreListener {
     static let shared = UserFirestoreListener()
     
     //MARK: - Login
+    
     func loginUserWith(email: String, password: String, completion: @escaping (_ error: Error?, _ isEmailVerifieed: Bool) -> Void) {
         Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
             guard error == nil, authResult?.user.isEmailVerified == true else {
@@ -60,6 +61,7 @@ class UserFirestoreListener {
     }
     
     //MARK: - Log Out
+    
     func logOutCurrentUser(completion: @escaping (_ error: Error?) -> Void) {
         do {
             try Auth.auth().signOut()
@@ -69,6 +71,7 @@ class UserFirestoreListener {
             completion(error)
         }
     }
+    //MARK: - save user
     
     func saveUserInFirestore(_ user: User) {
         do {
@@ -77,8 +80,9 @@ class UserFirestoreListener {
             print(error.localizedDescription)
         }
     }
+    //MARK: - download user using ID
     
-    private func downloadUserFromFirestore(userId: String) {
+     func downloadUserFromFirestore(userId: String) {
         firestoreReference(.User).document(userId).getDocument { document, error in
             guard let userDocument = document else {
                 print("no data found")
@@ -101,6 +105,7 @@ class UserFirestoreListener {
             }
         }
     }
+    //MARK: - download all users and exepting the current one
     
     func downloadAllUsersfromFirestore(completion: @escaping (_ users: [User]?) -> Void) {
         
@@ -122,6 +127,26 @@ class UserFirestoreListener {
                 }
             }
             completion(appUsers)
+        }
+    }
+    //MARK: - download users using IDs
+    
+    func downloadUsersfromFirestore(withIds: [String], completion: @escaping(_ allUsers: [User]) -> Void) {
+        var counter = 0
+        var usersArr: [User] = []
+        
+        for userId in withIds {
+            firestoreReference(.User).document(userId).getDocument { documentSnapshot, error in
+                guard let document = documentSnapshot else { return }
+                let user = try? document.data(as: User.self)
+                
+                usersArr.append(user!)
+                counter += 1
+                
+                if counter == withIds.count {
+                    completion(usersArr)
+                }
+            }
         }
     }
 }

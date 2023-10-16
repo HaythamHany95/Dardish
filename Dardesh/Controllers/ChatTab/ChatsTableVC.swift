@@ -42,6 +42,9 @@ class ChatsTableVC: UITableViewController {
     }
     
     private func navigateToMessages(chatRoom: ChatRoom) {
+        //TODO: make sure that both users have the chatRoom
+        recreateChatRoom(chatRoomId: chatRoom.chatRoomId, memberIds: chatRoom.memberIds)
+        
         let vc = MessagesVC(chatId: chatRoom.chatRoomId, recipientId: chatRoom.receiverId, recipientName: chatRoom.receiverName)
         navigationController?.pushViewController(vc, animated: true)
     }
