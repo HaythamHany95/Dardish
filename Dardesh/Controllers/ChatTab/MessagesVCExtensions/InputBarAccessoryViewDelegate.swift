@@ -16,7 +16,7 @@ extension MessagesVC: InputBarAccessoryViewDelegate {
     func inputBar(_ inputBar: InputBarAccessoryView, didPressSendButtonWith text: String) {
         send(text: text, image: nil, video: nil, location: nil, audio: nil)
         messageInputBar.inputTextView.text = ""
-        //        messageInputBar.invalidatePlugins()
+        messageInputBar.invalidatePlugins()
         
     }
 }

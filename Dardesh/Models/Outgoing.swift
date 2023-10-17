@@ -10,7 +10,7 @@ import UIKit
 import FirebaseFirestoreSwift
 import Gallery
 
-class OutgoingMessage {
+class Outgoing {
     
     class func sendMessage(chatId: String, memberIds: [String], text: String?, video: Video?, audio: String?, audioDuration: Float = 0.0, image: UIImage?, location: String? ) {
         ///1. create local message from the data we have "LocalMessage" model
@@ -66,5 +66,5 @@ func sendText(message: LocalMessage, text: String, memberIds: [String]) {
     message.message = text
     message.type = Constants.textType
     
-    OutgoingMessage.saveMessage(message: message, memberIds: memberIds)
+    Outgoing.saveMessage(message: message, memberIds: memberIds)
 }

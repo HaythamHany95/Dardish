@@ -12,7 +12,7 @@ class RealmManager {
     static let shared = RealmManager()
     
     let realm = try! Realm()
-    
+    ///Generics func
     func save<T: Object> (_ object: T) {
         do {
             try realm.write{

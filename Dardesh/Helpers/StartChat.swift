@@ -35,7 +35,7 @@ func createChatRoom(chatRoomId: String, users: [User]) {
     for user in users {
         usersToCreateChatsFor.append(user.id)
     }
-        firestoreReference(.Chat).whereField("chatRoomId", isEqualTo: chatRoomId).getDocuments { querySnapshot, error in
+        firestoreReference(.Chat).whereField("chatRoom", isEqualTo: chatRoomId).getDocuments { querySnapshot, error in
             
             guard let snapshot = querySnapshot else { return }
             

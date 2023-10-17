@@ -20,7 +20,12 @@ class MessagesVC: MessagesViewController {
     let micButton = InputBarButtonItem()
     
     let currentUser = MKSender(senderId: User.currentId!, displayName: User.currentUser!.username)
-    let mkMessages: [MKMessage] = []
+    var mkMessages: [MKMessage] = []
+    
+    var allLocalMessages: Results<LocalMessage>!
+    let realm = try! Realm()
+    
+    var notificationToken: NotificationToken?
     
     init(chatId: String, recipientId: String, recipientName: String) {
         super.init(nibName: nil, bundle: nil)
@@ -32,16 +37,18 @@ class MessagesVC: MessagesViewController {
         super.viewDidLoad()
         configureMessageCollectionView()
         configureMessageInputBar()
+        
+        loadMessages()
     }
     
     private func configureMessageCollectionView() {
-        messagesCollectionView.dataSource = self
+        messagesCollectionView.messagesDataSource = self
         messagesCollectionView.messageCellDelegate = self
         messagesCollectionView.messagesDisplayDelegate = self
         messagesCollectionView.messagesLayoutDelegate = self
         messagesCollectionView.refreshControl = refreshControl
         
-        scrollsToBottomOnKeyboardBeginsEditing = true
+        scrollsToLastItemOnKeyboardBeginsEditing = true
         maintainPositionOnKeyboardFrameChanged = true
     }
     
@@ -83,14 +90,65 @@ class MessagesVC: MessagesViewController {
         }
     }
     
-
+    
     //ACTIONS
     func send(text: String?, image: UIImage?, video: Video?,location: String?, audio: String?, audioDuration: Float = 0.0) {
-        OutgoingMessage.sendMessage(chatId: chatId, memberIds: [User.currentId!, recipientsId], text: text, video: video, audio: audio, image: image, location: location)
+        Outgoing.sendMessage(chatId: chatId, memberIds: [User.currentId!, recipientsId], text: text, video: video, audio: audio, image: image, location: location)
+        print(Realm.Configuration.defaultConfiguration.fileURL!)
     }
     
+    //MARK: - Load Messages
     
+    private func loadMessages() {
+        allLocalMessages = realm.objects(LocalMessage.self).filter("chatRoom = %@", chatId).sorted(byKeyPath: "date", ascending: true)
+        print("\(allLocalMessages.count) message found")
+        //insertMkMessages()
+        
+        if allLocalMessages.isEmpty {
+            checkForOldMessage()
+        }
+        ///Observing any change in RealmDataBase "LocalMessages"
+        notificationToken = allLocalMessages.observe({ (change: RealmCollectionChange) in
+            switch change {
+            
+            case .initial:
+                self.insertMkMessages()
+                self.messagesCollectionView.reloadData()
+                self.messagesCollectionView.scrollToLastItem(animated: true)
+                
+            case .update(_, _, let insertions, _):
+                for index in insertions {
+                    self.insertMkMessage(localMessage: self.allLocalMessages[index])
+                    self.messagesCollectionView.reloadData()
+                    self.messagesCollectionView.scrollToLastItem(animated: true)
+                }
+            
+            case .error(let error):
+                print("error in insertion", error.localizedDescription)
+            }
+        })
+        
+    }
     
+    //Converting the localMessage to mKMessage to append it to mkMessages array that responsible to display the chat
+    private func insertMkMessage(localMessage: LocalMessage) {
+        let incoming = Incoming(messageViewController: self)
+        
+        let mKMessage = incoming.createMkMessage(localMessage: localMessage)
+        self.mkMessages.append(mKMessage)
+
+    }
+    
+    private func insertMkMessages() {
+        for localMessage in allLocalMessages {
+            insertMkMessage(localMessage: localMessage)
+            
+        }
+    }
+    
+    private func checkForOldMessage() {
+        MessageFirestoreListener.shared.checkForOldMessage(documentId: User.currentId!, collectionId: chatId)
+    }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
