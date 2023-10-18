@@ -7,16 +7,112 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "D8B2DA18-AE92-4CCD-98E2-5681A2686901"
-            shouldBeEnabled = "No"
+            uuid = "5A1C484A-F306-4579-A46D-13336A4BFD26"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Dardesh/Helpers/Extensions.swift"
+            filePath = "Dardesh/Controllers/ChatTab/MessagesVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "init(chatId:recipientId:recipientName:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BBBAB274-073A-43AF-9DBB-9344B695C10F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Dardesh/Controllers/ChatTab/MessagesVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "init(chatId:recipientId:recipientName:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FBBFD82F-557D-48AD-B1F8-43C551CC2DF4"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Dardesh/Controllers/ChatTab/MessagesVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
+            landmarkName = "send(text:image:video:location:audio:audioDuration:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "FBBFD82F-557D-48AD-B1F8-43C551CC2DF4 - 5038594b64d552d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "default argument 5 of Dardesh.MessagesVC.send(text: Swift.Optional&lt;Swift.String&gt;, image: Swift.Optional&lt;__C.UIImage&gt;, video: Swift.Optional&lt;Gallery.Video&gt;, location: Swift.Optional&lt;Swift.String&gt;, audio: Swift.Optional&lt;Swift.String&gt;, audioDuration: Swift.Float) -&gt; ()"
+                  moduleName = "Dardesh"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/haytham/Desktop/Dardesh/Dardesh/Controllers/ChatTab/MessagesVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "101"
+                  endingLineNumber = "101"
+                  offsetFromSymbolStart = "7">
+               </Location>
+               <Location
+                  uuid = "FBBFD82F-557D-48AD-B1F8-43C551CC2DF4 - 554d1b23cc60ec74"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Dardesh.MessagesVC.send(text: Swift.Optional&lt;Swift.String&gt;, image: Swift.Optional&lt;__C.UIImage&gt;, video: Swift.Optional&lt;Gallery.Video&gt;, location: Swift.Optional&lt;Swift.String&gt;, audio: Swift.Optional&lt;Swift.String&gt;, audioDuration: Swift.Float) -&gt; ()"
+                  moduleName = "Dardesh"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/haytham/Desktop/Dardesh/Dardesh/Controllers/ChatTab/MessagesVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "102"
+                  endingLineNumber = "102"
+                  offsetFromSymbolStart = "346">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D81DF551-8DF4-4B0F-8EF7-25B5D9477941"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Dardesh/Controllers/ChatTab/MessagesVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "102"
+            endingLineNumber = "102"
+            landmarkName = "send(text:image:video:location:audio:audioDuration:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9352AE1D-1986-416E-A51F-18633FDABC07"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Dardesh/Controllers/ChatTab/MessagesVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "33"
             endingLineNumber = "33"
-            landmarkName = "longDate()"
+            landmarkName = "init(chatId:recipientId:recipientName:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

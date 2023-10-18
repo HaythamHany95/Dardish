@@ -16,6 +16,7 @@ class MessagesVC: MessagesViewController {
     private var chatId = ""
     private var recipientsId = ""
     private var recipientName = ""
+    
     let refreshControl = UIRefreshControl()
     let micButton = InputBarButtonItem()
     
@@ -39,6 +40,11 @@ class MessagesVC: MessagesViewController {
         configureMessageInputBar()
         
         loadMessages()
+        listenToNewMessages()
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
     }
     
     private func configureMessageCollectionView() {
@@ -130,28 +136,40 @@ class MessagesVC: MessagesViewController {
         
     }
     
+    //MARK: - Insert MKMessage
+    
     //Converting the localMessage to mKMessage to append it to mkMessages array that responsible to display the chat
     private func insertMkMessage(localMessage: LocalMessage) {
         let incoming = Incoming(messageViewController: self)
         
         let mKMessage = incoming.createMkMessage(localMessage: localMessage)
         self.mkMessages.append(mKMessage)
-
     }
     
     private func insertMkMessages() {
         for localMessage in allLocalMessages {
             insertMkMessage(localMessage: localMessage)
-            
         }
     }
+    
+    //MARK: - Get the old messages
     
     private func checkForOldMessage() {
         MessageFirestoreListener.shared.checkForOldMessage(documentId: User.currentId!, collectionId: chatId)
     }
     
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
+    //MARK: - Listen to new messages
+    
+    private func listenToNewMessages() {
+        MessageFirestoreListener.shared.listenToNewMessages(documentId: User.currentId!, collectionId: chatId, lastMessageDate: determineLastMessageDate())
     }
+    
+    private func determineLastMessageDate() -> Date {
+        let lastMessageDate = allLocalMessages.last?.date ?? Date()
+        
+        return Calendar.current.date(byAdding: .second, value: 1, to: lastMessageDate) ?? lastMessageDate
+    }
+    
+   
     
 }

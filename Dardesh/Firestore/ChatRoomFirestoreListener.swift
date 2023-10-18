@@ -11,7 +11,8 @@ import Firebase
 class ChatRoomFirestoreListener {
     static let shared = ChatRoomFirestoreListener()
     
-    //MARK: - Save ChatRoom in Firestore
+    //MARK: - Save ChatRoom
+    
     func saveChatRoom(_ chatRoom: ChatRoom) {
         do {
             try firestoreReference(.Chat).document(chatRoom.id).setData(from: chatRoom)
@@ -21,9 +22,10 @@ class ChatRoomFirestoreListener {
         }
     }
     
-    //MARK: - Download ChatRoom from Firestore
+    //MARK: - Download ChatRoom
+    
     func downloadChatRooms(completion: @escaping (_ allChatRooms: [ChatRoom]) -> Void) {
-        firestoreReference(.Chat).whereField("senderId", isEqualTo: User.currentId).addSnapshotListener { snapshot, error in
+        firestoreReference(.Chat).whereField("senderId", isEqualTo: User.currentId!).addSnapshotListener { snapshot, error in
             
             var chatRooms: [ChatRoom] = []
             guard let documets = snapshot?.documents else {
@@ -33,20 +35,23 @@ class ChatRoomFirestoreListener {
             let allFbChatRooms = documets.compactMap { snapshot -> ChatRoom? in
                 return try? snapshot.data(as: ChatRoom.self)
             }
-            //avoiding downloading an empty message
+            
+            //Avoiding downloading an empty message
             for chatRoom in allFbChatRooms {
                 if chatRoom.lastMessage != "" {
                     chatRooms.append(chatRoom)
                 }
             }
-            //sorting messages by date, new ones comes first
+            
+            //Sorting messages by date, new ones comes first
             chatRooms.sorted(by: { $0.date! > $1.date!})
             
             completion(chatRooms)
         }
     }
     
-    //MARK: - Delete ChatRoom from Firestore
+    //MARK: - Delete ChatRoom
+    
     func deleteChatRoom(chatRoom: ChatRoom) {
         firestoreReference(.Chat).document(chatRoom.id).delete { error in
             guard error == nil else {
