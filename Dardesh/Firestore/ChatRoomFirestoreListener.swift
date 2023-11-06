@@ -55,12 +55,63 @@ class ChatRoomFirestoreListener {
     func deleteChatRoom(chatRoom: ChatRoom) {
         firestoreReference(.Chat).document(chatRoom.id).delete { error in
             guard error == nil else {
-                print("Error removing document\(error?.localizedDescription)")
+                print("Error removing document\(String(describing: error?.localizedDescription))")
                 return
             }
             print("Document removed successfully")
         }
     }
     
+    //MARK: - Reset unread counter
+    
+    func clearUnreadCounter(chatRoom: ChatRoom) {
+        var newChatRoom = chatRoom
+        newChatRoom.unreadCounter = 0
+        saveChatRoom(newChatRoom)
+    }
+    
+    func clearUnreadCounterWith(chatRoomId: String) {
+        firestoreReference(.Chat).whereField("chatRoomId", isEqualTo: chatRoomId).whereField("senderId", isEqualTo: User.currentId!).getDocuments { querySnapshot, error in
+            
+            guard let documents = querySnapshot?.documents else { return }
+            
+            let allChatRooms = documents.compactMap { querySnapshot -> ChatRoom? in
+                return try? querySnapshot.data(as: ChatRoom.self)
+            }
+            
+            if allChatRooms.count > 0 {
+                self.clearUnreadCounter(chatRoom: allChatRooms.first!)
+            }
+        }
+    }
+    
+    //MARK: - Update chatRoom with new message
+    
+    private func updateChatRoomWithNewMessage(chatRoom: ChatRoom, lastMessage: String) {
+        var tempChatRoom = chatRoom
+        
+        if tempChatRoom.senderId != User.currentId {
+            tempChatRoom.unreadCounter += 1
+        }
+        
+        tempChatRoom.lastMessage = lastMessage
+        tempChatRoom.date = Date()
+        saveChatRoom(chatRoom)
+    }
+    
+    func updateChatRooms(chatRoomId: String, lastMessage: String) {
+        firestoreReference(.Chat).whereField("chatRoomId", isEqualTo: chatRoomId).getDocuments { querySnapshot, error in
+            
+            guard let documents = querySnapshot?.documents else { return }
+            
+            let allChatRooms = documents.compactMap { querySnapshot -> ChatRoom? in
+                return try? querySnapshot.data(as: ChatRoom.self)
+            }
+            
+            for chatRoom in allChatRooms {
+                self.updateChatRoomWithNewMessage(chatRoom: chatRoom, lastMessage: lastMessage)
+            }
+        }
+    }
 }
 

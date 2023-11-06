@@ -6,6 +6,8 @@
 //
 
 import Foundation
+import UIKit
+import AVFoundation
 
 func fileNameFrom(fileUrl: String) -> String {
     let name = fileUrl.components(separatedBy: "_").last
@@ -13,6 +15,7 @@ func fileNameFrom(fileUrl: String) -> String {
     return exactName!
 }
 
+///Formatter for the last message appered in ChatTable
 func timeElapsed(_ date: Date) -> String {
     let seconds = Date().timeIntervalSince(date)
     var elapsed = ""
@@ -37,3 +40,18 @@ func timeElapsed(_ date: Date) -> String {
     return elapsed
 }
 
+///To Convert Video Message to an Image
+func videoThumbnail(videoURL: URL) -> UIImage {
+    do {
+        let asset = AVURLAsset(url: videoURL)
+        let imageGenerator = AVAssetImageGenerator(asset: asset)
+        imageGenerator.appliesPreferredTrackTransform = true
+        let cgImage = try imageGenerator.copyCGImage(at: .zero, actualTime: nil)
+
+        return UIImage(cgImage: cgImage)
+    } catch {
+        print(error.localizedDescription)
+
+        return UIImage(named: "photo_placeholder")!
+    }
+}

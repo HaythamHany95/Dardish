@@ -10,4 +10,11 @@ import MessageKit
 
 extension MessagesVC: MessagesDisplayDelegate {
     
+    func messageStyle(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> MessageStyle {
+        
+        let tail: MessageStyle.TailCorner = isFromCurrentSender(message: message) ? .bottomRight : .bottomLeft
+        
+        return .bubbleTail(tail, .pointedEdge)
+    }
+    
 }

@@ -10,7 +10,13 @@ import InputBarAccessoryView
 
 extension MessagesVC: InputBarAccessoryViewDelegate {
     func inputBar(_ inputBar: InputBarAccessoryView, textViewTextDidChangeTo text: String) {
-        print("typing \(text)")
+        
+        updateMicButtonStatus(show: text == "")
+        
+        if text != "" {
+            startTypingIndicator()
+        }
+        
     }
     
     func inputBar(_ inputBar: InputBarAccessoryView, didPressSendButtonWith text: String) {

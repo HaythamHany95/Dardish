@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		5EDB6449EBA575B6558F238E /* Pods_Dardesh.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72DD7A56E1B99CFE9EC9C8F0 /* Pods_Dardesh.framework */; };
 		9D0EB4932AD3EC9C007AFB95 /* EditProfileTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0EB4922AD3EC9C007AFB95 /* EditProfileTableVC.swift */; };
+		9D2126902AE97626006243BE /* VideoMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D21268F2AE97626006243BE /* VideoMessage.swift */; };
+		9D2B8BAC2AE916E700FFAAAB /* PhotoMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2B8BAB2AE916E700FFAAAB /* PhotoMessage.swift */; };
+		9D5094382AE56FA1001E7893 /* TypingFirestoreListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5094372AE56FA1001E7893 /* TypingFirestoreListener.swift */; };
+		9D5FAA0B2AEAE3E100ED0696 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5FAA0A2AEAE3E100ED0696 /* LocationManager.swift */; };
+		9D78C92D2AE8023C00B33E6C /* GalleryControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D78C92C2AE8023C00B33E6C /* GalleryControllerDelegate.swift */; };
 		9D92F5A82ADC2C5600BE53F7 /* MessagesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D92F5A72ADC2C5500BE53F7 /* MessagesVC.swift */; };
 		9D990CCA2AD9920500161C38 /* ChatsTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D990CC92AD9920500161C38 /* ChatsTableVC.swift */; };
 		9D990CCC2AD9924D00161C38 /* ChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D990CCB2AD9924D00161C38 /* ChatTableViewCell.swift */; };
@@ -54,6 +59,11 @@
 		6BCB815348CE214703D38809 /* Pods-Dardesh.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dardesh.debug.xcconfig"; path = "Target Support Files/Pods-Dardesh/Pods-Dardesh.debug.xcconfig"; sourceTree = "<group>"; };
 		72DD7A56E1B99CFE9EC9C8F0 /* Pods_Dardesh.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dardesh.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D0EB4922AD3EC9C007AFB95 /* EditProfileTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileTableVC.swift; sourceTree = "<group>"; };
+		9D21268F2AE97626006243BE /* VideoMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoMessage.swift; sourceTree = "<group>"; };
+		9D2B8BAB2AE916E700FFAAAB /* PhotoMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoMessage.swift; sourceTree = "<group>"; };
+		9D5094372AE56FA1001E7893 /* TypingFirestoreListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypingFirestoreListener.swift; sourceTree = "<group>"; };
+		9D5FAA0A2AEAE3E100ED0696 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		9D78C92C2AE8023C00B33E6C /* GalleryControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryControllerDelegate.swift; sourceTree = "<group>"; };
 		9D92F5A72ADC2C5500BE53F7 /* MessagesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesVC.swift; sourceTree = "<group>"; };
 		9D990CC92AD9920500161C38 /* ChatsTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsTableVC.swift; sourceTree = "<group>"; };
 		9D990CCB2AD9924D00161C38 /* ChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableViewCell.swift; sourceTree = "<group>"; };
@@ -202,6 +212,7 @@
 				9DCB27152ADD375100F1A8FA /* MessagesDisplayDelegate.swift */,
 				9DCB27172ADD377400F1A8FA /* MessagesLayoutDelegate.swift */,
 				9DCB27192ADD37A200F1A8FA /* InputBarAccessoryViewDelegate.swift */,
+				9D78C92C2AE8023C00B33E6C /* GalleryControllerDelegate.swift */,
 			);
 			path = MessagesVCExtensions;
 			sourceTree = "<group>";
@@ -251,6 +262,9 @@
 				9DCB271F2ADD92E700F1A8FA /* RealmManager.swift */,
 				9DCB27232ADD9CC600F1A8FA /* Outgoing.swift */,
 				9DAD32F32ADE593100DA7DC6 /* Incoming.swift */,
+				9D2B8BAB2AE916E700FFAAAB /* PhotoMessage.swift */,
+				9D21268F2AE97626006243BE /* VideoMessage.swift */,
+				9D5FAA0A2AEAE3E100ED0696 /* LocationManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -263,6 +277,7 @@
 				9DD007412ACECED600A99B3E /* UserFirestoreListener.swift */,
 				9DAED43E2ADBA7750002CBD1 /* ChatRoomFirestoreListener.swift */,
 				9DCB27212ADD96D400F1A8FA /* MessageFirestoreListener.swift */,
+				9D5094372AE56FA1001E7893 /* TypingFirestoreListener.swift */,
 			);
 			path = Firestore;
 			sourceTree = "<group>";
@@ -406,11 +421,14 @@
 				9DCB271A2ADD37A200F1A8FA /* InputBarAccessoryViewDelegate.swift in Sources */,
 				9DFB6CC02ADAA47700E51E3C /* StartChat.swift in Sources */,
 				9DD007422ACECED600A99B3E /* UserFirestoreListener.swift in Sources */,
+				9D5FAA0B2AEAE3E100ED0696 /* LocationManager.swift in Sources */,
 				9DCB27122ADD370D00F1A8FA /* MessagesDataSource.swift in Sources */,
 				9DB24ED72ACD597C0046BEE8 /* AppDelegate.swift in Sources */,
 				9DCB271C2ADD755500F1A8FA /* MKSender.swift in Sources */,
 				9DCEAF042AD7C418000CE9DE /* UsersTableVC.swift in Sources */,
+				9D5094382AE56FA1001E7893 /* TypingFirestoreListener.swift in Sources */,
 				9DD9C2B92AD2F95600AFBC39 /* SettingsTableVC.swift in Sources */,
+				9D78C92D2AE8023C00B33E6C /* GalleryControllerDelegate.swift in Sources */,
 				9DEB17F42AD7038800577037 /* StatusTableVC.swift in Sources */,
 				9DCB270F2ADD09FF00F1A8FA /* LocalMessage.swift in Sources */,
 				9D990CCE2AD9957C00161C38 /* MainVC.swift in Sources */,
@@ -428,6 +446,8 @@
 				9D9EFC022AD9BE2B008743D2 /* ChatRoom.swift in Sources */,
 				9D92F5A82ADC2C5600BE53F7 /* MessagesVC.swift in Sources */,
 				9DD007402ACEB41500A99B3E /* FirestoreCollectionReference.swift in Sources */,
+				9D2B8BAC2AE916E700FFAAAB /* PhotoMessage.swift in Sources */,
+				9D2126902AE97626006243BE /* VideoMessage.swift in Sources */,
 				9DCB271E2ADD7C3800F1A8FA /* MKMessage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

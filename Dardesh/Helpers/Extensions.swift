@@ -36,3 +36,20 @@ extension Date {
         return dateFormatter.string(from: self)
     }
 }
+
+extension Date {
+    func time() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "HH:mm"
+        return dateFormatter.string(from: self)
+    }
+}
+
+///To make a unique ID for ImageUrl in file directory
+extension Date {
+    func stringDate() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "ddMMyyyyHHmmss"
+        return dateFormatter.string(from: self)
+    }
+}

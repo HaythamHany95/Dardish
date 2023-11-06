@@ -11,7 +11,9 @@ import FirebaseFirestoreSwift
 
 class MessageFirestoreListener {
     static let shared = MessageFirestoreListener()
+    
     var newMessageListener: ListenerRegistration!
+    var updatedMessageListener: ListenerRegistration!
     
     //MARK: - Saving new message
     
@@ -74,5 +76,45 @@ class MessageFirestoreListener {
         }
     }
     
+    //MARK: - Update message status
+    
+    func updateMessageStatus(_ message: LocalMessage, userId: String) {
+        let values = ["status": "read", "readDate": Date()] as [String: Any]
+        
+        firestoreReference(.Message).document(userId).collection(message.chatRoom).document(message.id).updateData(values)
+    }
+    
+    //MARK: - Listen for read status update
+    
+    func listenForReadStatus(documentId: String, collectionId: String, completion: @escaping (_ updatedMessage: LocalMessage) -> Void) {
+        updatedMessageListener = firestoreReference(.Message).document(documentId).collection(collectionId).addSnapshotListener { querySnapshot, error in
+            
+            guard let snapshot = querySnapshot else { return }
+            
+            for change in snapshot.documentChanges {
+                if change.type == .modified {
+                    
+                    let result = Result {
+                        try? change.document.data(as: LocalMessage.self)
+                    }
+                    
+                    switch result {
+                    case .success(let messageObject):
+                        if let message = messageObject {
+                            completion(message)
+                        }
+                    case .failure(let error):
+                        print("Error decoding", error.localizedDescription)
+                    }
+                }
+            }
+        }
+    }
+    
+    ///Stop listeners is important for not using device resource for nothing
+    func removeNewMessageListener() {
+        newMessageListener.remove()
+        updatedMessageListener.remove()
+    }
     
 }
